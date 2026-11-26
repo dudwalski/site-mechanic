@@ -13,7 +13,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Pack the skill (skill folder at the archive root)
         run: cd skills && zip -r ../site-mechanic.zip site-mechanic
       - name: Create the release or attach the ZIP to an existing one
