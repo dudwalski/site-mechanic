@@ -3,6 +3,8 @@ name: Release
 on:
   push:
     tags: ['v*']
+  release:
+    types: [published]
 
 permissions:
   contents: write
@@ -14,7 +16,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Pack the skill (skill folder at the archive root)
         run: cd skills && zip -r ../site-mechanic.zip site-mechanic
-      - name: Create the release
+      - name: Create the release or attach the ZIP to an existing one
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" site-mechanic.zip --title "site-mechanic $GITHUB_REF_NAME" --generate-notes
+          TAG: ${{ github.event.release.tag_name || github.ref_name }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" site-mechanic.zip --clobber
+          else
+            gh release create "$TAG" site-mechanic.zip --title "site-mechanic $TAG" --generate-notes
+          fi
