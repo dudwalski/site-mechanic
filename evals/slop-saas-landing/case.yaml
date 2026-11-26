@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: slop-saas-landing
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Raport audytu (tryb Audyt) zgłaszający klaster Generyczny SaaS z dowodami plik:linia, ustalenie G1 dla opinii Johna Doe z Acme jako potwierdzonego szablonu (P0), bez oceny punktowej i bez zgadywania autorstwa, z sekcją Niewiadome.

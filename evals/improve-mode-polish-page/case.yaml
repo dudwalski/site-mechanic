@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: improve-mode-polish-page
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Tryb Ulepszanie: najpierw audyt, potem plan w kategoriach Naprawy/Usunięcia/Szlif/Kierunek i pytanie o zgodę; jeśli bez odpowiedzi – tylko Naprawy P0–P1 bez zmiany wyglądu i treści, na kopii pliku. Wykryty brak lang, brak alt, podzbiór fontu bez latin-ext; brak wymyślonych treści.

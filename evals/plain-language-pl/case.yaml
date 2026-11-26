@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: plain-language-pl
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Audyt warstwy tekstów strony serwisu pralek po polsku: teksty bezosobowe, urzędowe, w stronie biernej i z rzeczownikami zamiast czasowników zgłoszone jako jedno ustalenie systemowe z przykładami; dodatkowa opłata ukryta w przypisie jako P1; regulamin nie przepisany jako gotowy tekst, tylko „do oceny prawnej”; propozycje tekstów jako warianty do akceptacji.

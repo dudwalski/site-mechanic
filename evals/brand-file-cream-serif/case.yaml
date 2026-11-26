@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: brand-file-cream-serif
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Kremowe tło, Fraunces i terakota są w pliku marki, więc nie są zgłaszane jako slop; kolor #7c3aed spoza pliku marki zgłoszony jako Niezgodne z marką; za niski kontrast h1 (#D97757 na #F4F1EA) zgłoszony w B mimo pliku marki.

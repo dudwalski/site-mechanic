@@ -1,0 +1,39 @@
+name: Check skill
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Script syntax
+        run: for f in skills/site-mechanic/scripts/*.mjs; do node --check "$f"; done
+      - name: Slop sweep smoke test
+        run: |
+          printf '<h1 class="kicker">The future, reimagined</h1><p>Trusted by 10,000+ teams</p>' > /tmp/t.html
+          node skills/site-mechanic/scripts/slop-sweep.mjs /tmp/t.html --json | grep -q '"G1"'
+      - name: SKILL.md frontmatter and file references
+        run: |
+          python3 - <<'PY'
+          import re, sys, pathlib
+          d = pathlib.Path('skills/site-mechanic')
+          s = (d / 'SKILL.md').read_text(encoding='utf-8')
+          m = re.match(r'^---\n(.*?)\n---\n', s, re.S)
+          if not m: sys.exit('SKILL.md has no frontmatter')
+          fm = m.group(1)
+          name = re.search(r'^name: (.+)$', fm, re.M).group(1).strip()
+          desc = re.search(r'^description: (.+)$', fm, re.M).group(1).strip()
+          if name != d.name: sys.exit(f'name ({name}) differs from folder ({d.name})')
+          if len(desc) > 1024: sys.exit(f'description is {len(desc)} chars (limit 1024)')
+          if len(s.splitlines()) > 500: sys.exit('SKILL.md over 500 lines')
+          refs = set(re.findall(r'(?:references|assets|scripts)/[\w.-]+', ''.join(p.read_text(encoding='utf-8') for p in d.rglob('*.md'))))
+          missing = [r for r in refs if not (d / r).exists()]
+          if missing: sys.exit(f'Missing files: {missing}')
+          print(f'OK: {name}, description {len(desc)} chars, {len(refs)} file references')
+          PY

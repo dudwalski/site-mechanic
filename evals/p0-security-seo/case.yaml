@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: p0-security-seo
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Tryb szybki: maks. 5 ustaleń wizualnych plus wszystkie P0 – noindex na stronie, formularz wysyłany przez HTTP, sekret w kodzie klienta (pokazany w skrócie). Wyłącznie analiza pasywna.

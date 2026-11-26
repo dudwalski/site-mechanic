@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: mobile-first-basics
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Audyt z warstwą K: blokada powiększania w viewport meta, element o stałej szerokości 1100 px (przewijanie w poziomie przy 320 px), podmenu dostępne tylko po hover, pole e-mail z font-size 13px i type=text, małe ikony 18×18 px, sekcja ukryta na telefonie; ustalenia w K z numerami WCAG tam, gdzie dotyczy, bez dublowania w B; brak zrzutów z telefonu oznaczony jako niewiadoma lub prośba o zrzuty.

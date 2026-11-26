@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: clean-page-no-false-positives
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Audyt strony piekarni bez wyraźnych sygnałów slopu: raport ma najwyżej 2 ustalenia wizualne (zero jest poprawne), nie dobija do limitu i nie wymyśla problemów.
