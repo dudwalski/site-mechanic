@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cennik – Planerka, planer treści dla małych firm</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:0;color:#1f2328}
+main{max-width:1040px;margin:0 auto;padding:24px}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plan{border:1px solid #d0d7de;padding:16px}
+.plan.featured{border:2px solid #0b6bcb}
+.price{font-size:28px;font-weight:700}
+</style>
+</head>
+<body>
+<main>
+  <h1>Cennik Planerki</h1>
+  <p>Ceny rosną 1 stycznia 2027 r. Do 31 grudnia 2026 r. obowiązuje obecny cennik, także przy odnowieniu umowy.</p>
+
+  <div class="plans">
+    <div class="plan">
+      <h2>Start</h2>
+      <p class="price">19 zł / mies.</p>
+      <ul><li>1 profil firmowy</li><li>30 zaplanowanych postów</li></ul>
+      <a href="/rejestracja?plan=start">Wybieram Start</a>
+    </div>
+    <div class="plan">
+      <h2>Pro – bez analityki</h2>
+      <p class="price">59 zł / mies.</p>
+      <ul><li>3 profile</li><li>Posty bez limitu</li><li>Bez raportów i bez wsparcia</li></ul>
+      <a href="/rejestracja?plan=pro-lite">Wybieram Pro – bez analityki</a>
+    </div>
+    <div class="plan featured">
+      <h2>Pro</h2>
+      <p class="price">59 zł / mies.</p>
+      <ul><li>3 profile</li><li>Posty bez limitu</li><li>Raporty miesięczne</li><li>Wsparcie na czacie</li></ul>
+      <a href="/rejestracja?plan=pro">Wybieram Pro</a>
+    </div>
+  </div>
+
+  <section>
+    <h2>Co mówią klienci</h2>
+    <p>4,6/5 na podstawie 312 opinii w Google – <a href="https://g.page/planerka/review">zobacz wszystkie opinie</a>.</p>
+  </section>
+
+  <section>
+    <h2>Darmowe narzędzia? Prawdziwi profesjonaliści z nich nie korzystają.</h2>
+    <p>Jeśli traktujesz swoją firmę poważnie, wybierz Pro.</p>
+  </section>
+
+  <p>Możesz zrezygnować w każdej chwili w ustawieniach konta: <a href="/konto/subskrypcja">Zakończ subskrypcję</a>.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Młynek Żarna 2 – sklep Kawowa Pracownia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;color:#222;background:#fff}
+header,main,footer{max-width:960px;margin:0 auto;padding:16px}
+.price-old{text-decoration:line-through;color:#888}
+.price-new{font-size:32px;font-weight:700}
+.urgent{color:#c00;font-weight:700}
+.fine{font-size:10px;color:#bbb}
+.toast{position:fixed;left:16px;bottom:16px;background:#222;color:#fff;padding:12px;border-radius:6px;display:none}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center}
+.modal div{background:#fff;padding:24px;max-width:360px}
+.decline{font-size:12px;color:#999}
+</style>
+</head>
+<body>
+<header><a href="/">Kawowa Pracownia</a> &nbsp; <a href="/koszyk">Koszyk</a></header>
+<main>
+  <section id="produkt">
+    <h1>Młynek żarnowy Żarna 2</h1>
+    <img src="mlynek.jpg" alt="Młynek Żarna 2 z drewnianą korbką" width="480" height="480">
+    <p><span class="price-old">599 zł</span> <span class="price-new">349 zł</span> <span>-42%!</span></p>
+    <p class="urgent">Zostały tylko <b id="stock"></b> sztuki!</p>
+    <p><span id="viewers"></span> osób ogląda teraz ten produkt</p>
+    <p class="urgent">Promocja kończy się za <span id="timer"></span></p>
+    <button id="add">Dodaj do koszyka</button>
+  </section>
+
+  <section id="upsell">
+    <h2>Dodaj kawę na start?</h2>
+    <p>Kawa w subskrypcji – pierwsze 30 dni za darmo!</p>
+    <p class="fine">Następnie 79 zł/mies., subskrypcja odnawia się automatycznie co miesiąc.</p>
+    <button>Tak, chcę kawę za darmo</button>
+    <a class="decline" href="#koszyk">Nie, wolę pić słabą kawę</a>
+  </section>
+
+  <section id="koszyk">
+    <h2>Koszyk</h2>
+    <p>Młynek Żarna 2 – 349 zł</p>
+    <label><input type="checkbox" checked> Ubezpieczenie sprzętu na 2 lata (+29 zł)</label><br>
+    <label><input type="checkbox" checked> Chcę otrzymywać newsletter i oferty partnerów</label>
+    <p><strong>Razem: 349 zł</strong></p>
+    <a href="#podsumowanie">Przejdź do płatności</a>
+  </section>
+
+  <section id="podsumowanie">
+    <h2>Podsumowanie zamówienia</h2>
+    <p>Młynek Żarna 2 – 349 zł</p>
+    <p>Ubezpieczenie sprzętu – 29 zł</p>
+    <p>Opłata serwisowa – 19 zł</p>
+    <p>Dostawa kurierem – 18 zł</p>
+    <p><strong>Do zapłaty: 415 zł</strong></p>
+    <button>Zamawiam i płacę</button>
+  </section>
+</main>
+<footer>
+  <a href="/regulamin">Regulamin</a> &nbsp; <a href="/polityka-prywatnosci">Polityka prywatności</a> &nbsp; Kawowa Pracownia sp. z o.o., Kraków
+  <p>Chcesz zrezygnować z subskrypcji? Zadzwoń na infolinię w dni robocze 9–11.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+<div class="modal" id="modal"><div>
+  <p>Zapisz się do newslettera i odbierz 5% rabatu!</p>
+  <button onclick="closeModal()">Zamknij</button>
+</div></div>
+
+<script>
+document.getElementById('stock').textContent = Math.floor(Math.random() * 3) + 2;
+document.getElementById('viewers').textContent = Math.floor(Math.random() * 20) + 8;
+const end = Date.now() + 15 * 60 * 1000; // zawsze 15 minut od wejścia
+setInterval(() => {
+  const s = Math.max(0, Math.floor((end - Date.now()) / 1000));
+  document.getElementById('timer').textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+}, 1000);
+const names = ['Anna z Krakowa', 'Piotr z Gdańska', 'Ola z Poznania', 'Marek z Wrocławia'];
+setInterval(() => {
+  const t = document.getElementById('toast');
+  t.textContent = names[Math.floor(Math.random() * names.length)] + ' właśnie kupił(a) Żarna 2';
+  t.style.display = 'block'; setTimeout(() => t.style.display = 'none', 4000);
+}, 12000);
+function closeModal(){ document.getElementById('modal').style.display = 'none'; }
+setInterval(() => { document.getElementById('modal').style.display = 'flex'; }, 30000);
+</script>
+</body>
+</html>

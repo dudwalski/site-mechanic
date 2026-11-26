@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: keep-conventions
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Strona hydraulika o typowym, czytelnym układzie (nagłówek z telefonem, hero ze zdjęciem właściciela, usługi, cennik, godziny, kontakt) z dwoma ozdobnikami slopu: tekst z gradientem w h1 i pojawianie się sekcji przy przewijaniu (treść niewidoczna bez JS). Skill usuwa ozdobniki, ale nie łamie konwencji układu.

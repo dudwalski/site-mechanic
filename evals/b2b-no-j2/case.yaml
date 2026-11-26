@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: b2b-no-j2
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Strona B2B (oferta tylko dla firm, umowa indywidualna): część J2 o uczciwym projekcie sprzedaży konsumenckiej jest pominięta z adnotacją w Zakresie; brak funkcji odstąpienia nie jest zgłaszany; brak informacji o prywatności przy formularzu jest zgłoszony w J1.

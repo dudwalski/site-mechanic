@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: dark-patterns-shop
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Audyt sklepu z dark patterns: fałszywy niedobór i liczba oglądających z Math.random, licznik odliczający od wejścia, zaznaczone domyślnie ubezpieczenie i newsletter, confirmshaming, fałszywe powiadomienia o zakupach, powracający modal, opłata serwisowa dopiero w podsumowaniu, mało widoczne warunki subskrypcji, przekreślona cena bez informacji o najniższej cenie z 30 dni, rezygnacja tylko telefonicznie i brak funkcji odstąpienia. DFA opisany jako projekt, bez werdyktów prawnych.

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hydraulik Nowak – Kraków Podgórze, awarie 7 dni w tygodniu</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:0;color:#1b1f24;line-height:1.55}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 24px;border-bottom:1px solid #ddd}
+header a.tel{font-weight:700;font-size:18px}
+main{max-width:960px;margin:0 auto;padding:24px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center}
+h1{font-size:40px;line-height:1.15;background:linear-gradient(90deg,#1d4ed8,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+table{border-collapse:collapse;width:100%}
+td,th{border-bottom:1px solid #e5e5e5;padding:8px;text-align:left}
+.reveal{opacity:0;transform:translateY(30px);transition:all .8s}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<header>
+  <a href="/"><img src="logo-nowak.svg" alt="Hydraulik Nowak" width="140" height="40"></a>
+  <nav><a href="#uslugi">Usługi</a> &nbsp; <a href="#cennik">Cennik</a> &nbsp; <a href="#kontakt">Kontakt</a></nav>
+  <a class="tel" href="tel:+48600100200">600 100 200</a>
+</header>
+<main>
+  <section class="hero reveal">
+    <div>
+      <h1>Twoja hydraulika, na nowo</h1>
+      <p>Naprawy, wymiana baterii i piecyków, udrażnianie. Kraków Podgórze i okolice, dojazd w ciągu 2 godzin przy awarii.</p>
+      <a href="tel:+48600100200">Zadzwoń: 600 100 200</a>
+    </div>
+    <img src="jan-nowak-przy-pracy.jpg" alt="Jan Nowak wymienia syfon w kuchni" width="420" height="320">
+  </section>
+
+  <section id="uslugi" class="reveal">
+    <h2>Usługi</h2>
+    <ul>
+      <li>Usuwanie przecieków i awarii</li>
+      <li>Wymiana baterii, syfonów, spłuczek</li>
+      <li>Montaż i serwis piecyków gazowych (uprawnienia G3)</li>
+      <li>Udrażnianie kanalizacji</li>
+    </ul>
+  </section>
+
+  <section id="cennik" class="reveal">
+    <h2>Cennik</h2>
+    <table>
+      <tr><th>Usługa</th><th>Cena</th></tr>
+      <tr><td>Dojazd na terenie Podgórza</td><td>50 zł</td></tr>
+      <tr><td>Wymiana baterii umywalkowej</td><td>od 120 zł</td></tr>
+      <tr><td>Udrażnianie odpływu</td><td>od 150 zł</td></tr>
+    </table>
+  </section>
+
+  <section id="kontakt" class="reveal">
+    <h2>Kontakt</h2>
+    <p>Jan Nowak, ul. Kalwaryjska 20, Kraków &nbsp; Pon–Pt 7:00–19:00, awarie także w weekendy</p>
+    <p><a href="tel:+48600100200">600 100 200</a> &nbsp; <a href="mailto:jan@hydraulik-nowak.pl">jan@hydraulik-nowak.pl</a> &nbsp; <a href="https://maps.google.com/?q=Kalwaryjska+20+Krakow">Mapa dojazdu</a></p>
+  </section>
+</main>
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')));
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

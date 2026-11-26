@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: new-slop-signals
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Strona studia jogi z „gustownym domyślnym” klastrem (kremowe tło, Instrument Serif, kursywa jednego słowa, akcent #c96442) oraz nowymi sygnałami 3.2: strzałki na każdym przycisku, ikony iskierek, dithering w hero, tiki „quiet”/„real”, urywane zdania. Sygnały o niskiej pewności tylko w klastrze; sekcja „Do usunięcia” po werdykcie.

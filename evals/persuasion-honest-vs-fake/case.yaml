@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: persuasion-honest-vs-fake
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Cennik z planem-wabikiem („Pro – bez analityki” za tę samą cenę co Pro z większym zakresem) i zawstydzaniem tożsamością („Prawdziwi profesjonaliści…”), obok uczciwych elementów: realnej daty zmiany cen i ocen z linkiem do źródła. Skill zgłasza manipulacje, nie zgłasza uczciwych elementów jako manipulacji i nie poleca dodawania taktyk perswazji.
